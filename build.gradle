@@ -29,6 +29,7 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.2'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.brickred:socialauth-spring:2.5'
+    compile 'org.springframework.boot:spring-boot-starter-security'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
