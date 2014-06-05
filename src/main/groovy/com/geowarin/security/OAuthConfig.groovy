@@ -1,4 +1,4 @@
-package com.geowarin
+package com.geowarin.security
 
 import groovy.transform.CompileStatic
 import org.brickred.socialauth.SocialAuthConfig

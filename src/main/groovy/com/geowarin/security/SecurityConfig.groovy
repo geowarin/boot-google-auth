@@ -1,4 +1,4 @@
-package com.geowarin
+package com.geowarin.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -15,11 +15,6 @@ import javax.servlet.Filter
  */
 @Configuration
 class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {
-//        authManagerBuilder.userDetailsService(sessionService).passwordEncoder(new Md5PasswordEncoder());
-//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

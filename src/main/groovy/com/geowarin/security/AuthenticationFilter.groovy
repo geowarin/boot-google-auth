@@ -1,4 +1,4 @@
-package com.geowarin
+package com.geowarin.security
 
 import groovy.transform.CompileStatic
 import org.brickred.socialauth.AuthProvider
@@ -27,6 +27,9 @@ import javax.servlet.ServletResponse
 @CompileStatic
 class AuthenticationFilter extends GenericFilterBean {
 
+    @Autowired
+    private SocialAuthTemplate socialAuthTemplate
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         try {
@@ -38,10 +41,6 @@ class AuthenticationFilter extends GenericFilterBean {
             SecurityContextHolder.clearContext(); // Clear the context and free the thread local
         }
     }
-
-    @Autowired
-    private SocialAuthTemplate socialAuthTemplate
-
 
     private SecurityContext createSecurityContext() {
 
@@ -62,8 +61,4 @@ class AuthenticationFilter extends GenericFilterBean {
         authentication.details = profile
         return authentication
     }
-
-//    if (contextBeforeChainExecution.authentication != null && contextBeforeChainExecution.authentication.isAuthenticated()) {
-//                Session session = (Session) contextBeforeChainExecution.createAuthentication().getDetails();
-//            }
 }
