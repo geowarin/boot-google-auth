@@ -30,6 +30,10 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.brickred:socialauth-spring:2.5'
     compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+//    compile 'org.webjars:font-awesome:4.1.0'
+
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
