@@ -12,35 +12,36 @@
 
     <div class="padded">
         <div class="row">
-            <div class="three fifths bounceInRight animated">
+            <div class="bounceInRight animated">
                 <h1 class="zero museo-slab">Messages from users</h1>
-
                 <p class="quicksand">Please take some time to login and post a message</p>
             </div>
-            <div class="two fifths align-right-ipad align-right-desktop flipInX animated">
-
-                <p>
-                    <a href="home.html" rel="prev" class="blue button">Back</a>
-                    <a href="layout-b.html" rel="next" class="green button">Next: Image Gallery </a>
-                </p>
-            </div>
         </div>
     </div>
 
 
-    <div class="row">
-        <div class="one centered mobile third">
-
-            <a role="button" class="asphalt gap-bottom gap-right" th:href="@{/(form)}">
+    <div class="row padded">
+        <div class="one centered mobile half">
+            <a role="button" class="asphalt gap-bottom gap-right" th:href="@{/socialAuth?id=github}">
                 <i class="icon-github-sign icon-2x"></i> Login with github
             </a>
-            <a role="button" class="red gap-bottom gap-right" th:href="@{/(form)}">
+            <a role="button" class="red gap-bottom gap-right" th:href="@{/socialAuth?id=googleplus}">
                 <i class="icon-google-plus icon-2x"></i> Login with google
             </a>
-
         </div>
     </div>
 
+    <div class="row padded">
+        <div>
+            <blockquote>
+                <div style="height: 80px; width: 80px" >
+                    <img src="https://avatars.githubusercontent.com/u/1045636?s=80" style="height: 80px; width: 80px" />
+                </div>
+                Great site !!!
+                <cite><a href="https://github.com/geowarin">geowarin</a></cite>
+            </blockquote>
+        </div>
+    </div>
 </div>
 </body>
 </html>
