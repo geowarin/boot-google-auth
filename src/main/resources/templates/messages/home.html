@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
       layout:decorator="layout">
 <head>
     <title>Messages : View all</title>
@@ -22,13 +23,20 @@
 
     <div class="row padded">
         <div class="one centered mobile half">
-            <a role="button" class="asphalt gap-bottom gap-right" th:href="@{/socialAuth?id=github}">
+            <a role="button" class="asphalt gap-bottom gap-right" th:href="@{/socialauth?id=github}">
                 <i class="icon-github-sign icon-2x"></i> Login with github
             </a>
-            <a role="button" class="red gap-bottom gap-right" th:href="@{/socialAuth?id=googleplus}">
+            <a role="button" class="red gap-bottom gap-right" th:href="@{/socialauth?id=googleplus}">
                 <i class="icon-google-plus icon-2x"></i> Login with google
             </a>
         </div>
+    </div>
+
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        This content is only shown to <b>administrators</b>.
+    </div>
+    <div sec:authorize="hasRole('USER')">
+        This content is only shown to <b>users</b>.
     </div>
 
     <div class="row padded">

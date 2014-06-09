@@ -31,4 +31,11 @@ class LoginResource {
         AuthProvider provider = socialAuthTemplate.socialAuthManager?.currentAuthProvider
         return provider ? provider.userProfile : null
     }
+
+    @RequestMapping('/stop')
+    String logout() {
+        socialAuthTemplate.socialAuthManager?.currentAuthProvider?.logout()
+        return "OK"
+    }
+
 }
