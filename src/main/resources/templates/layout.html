@@ -2,15 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
     <title>Layout</title>
-    <link rel="stylesheet" th:href="@{/css/groundwork.css}" href="../../css/groundwork.css"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Modernizr -->
+    <script src="js/libs/modernizr-2.6.2.min.js"></script>
+    <!-- jQuery-->
+    <script type="text/javascript" src="js/libs/jquery-1.10.2.min.js"></script>
+    <!-- framework css -->
+    <!--[if gt IE 9]><!-->
+    <!--<link type="text/css" rel="stylesheet" href="css/groundwork.css">-->
+    <link rel="stylesheet" th:href="@{/css/groundwork.css}" />
+
+    <!--<![endif]-->
+    <!--[if lte IE 9]>
+    <link type="text/css" rel="stylesheet" href="css/groundwork-core.css">
+    <link type="text/css" rel="stylesheet" href="css/groundwork-type.css">
+    <link type="text/css" rel="stylesheet" href="css/groundwork-ui.css">
+    <link type="text/css" rel="stylesheet" href="css/groundwork-anim.css">
+    <link type="text/css" rel="stylesheet" href="css/groundwork-ie.css">
+    <![endif]-->
 </head>
 <body>
 <div class="container">
     <div class="navbar">
         <div class="navbar-inner">
-            <a class="brand"
-               href="https://github.com/ultraq/thymeleaf-layout-dialect">
-                Thymeleaf - Layout
+            <a class="brand" href="https://github.com/ultraq/thymeleaf-layout-dialect">
+                Thymeleaf - Layout 2
             </a>
             <ul class="nav">
                 <li>

@@ -1,9 +1,11 @@
 package com.geowarin
 
+import com.geowarin.rest.RestConfig
+import com.geowarin.security.SecurityConfig
 import groovy.transform.CompileStatic
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.context.annotation.ComponentScan
+import org.springframework.context.annotation.Import
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 
@@ -15,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestMapping
  */
 @EnableAutoConfiguration
 @CompileStatic
-@ComponentScan
-@Controller('/')
+@Import([RestConfig, SecurityConfig])
+@Controller
 class Application {
 
     static void main(String[] args) {
         SpringApplication.run(Application, args)
     }
 
-    @RequestMapping
+    @RequestMapping('/')
     String home() {
         'messages/home'
     }
