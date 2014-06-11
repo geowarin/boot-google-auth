@@ -22,6 +22,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.
                 addFilterBefore(authenticationFilter(), LogoutFilter.class).
+                logout().logoutSuccessUrl('/').and().
                 csrf().disable().
                 sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().

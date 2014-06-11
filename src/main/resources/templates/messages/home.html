@@ -7,7 +7,6 @@
     <title>Messages : View all</title>
 </head>
 <body>
-<h1 layout:fragment="header">Messages : View all</h1>
 
 <div layout:fragment="content" class="container">
 
@@ -20,8 +19,7 @@
         </div>
     </div>
 
-
-    <div class="row padded">
+    <div class="row padded" sec:authorize="isAnonymous()">
         <div class="one centered mobile half">
             <a role="button" class="asphalt gap-bottom gap-right" th:href="@{/socialauth?id=github}">
                 <i class="icon-github-sign icon-2x"></i> Login with github
@@ -32,7 +30,7 @@
         </div>
     </div>
 
-    <div sec:authorize="hasRole('ROLE_ADMIN')">
+    <div sec:authorize="hasRole('ADMIN')">
         This content is only shown to <b>administrators</b>.
     </div>
     <div sec:authorize="hasRole('USER')">
@@ -50,6 +48,19 @@
             </blockquote>
         </div>
     </div>
+
+    <form action="#" th:action="@{/sendMessage}">
+        <div class="row">
+            <div class="one whole padded">
+                <label for="message">Special Instructions</label>
+                <textarea id="message" placeholder="Enter your message..."></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" role="button" class="asphalt gap-bottom gap-right" />
+        </div>
+    </form>
 </div>
 </body>
 </html>

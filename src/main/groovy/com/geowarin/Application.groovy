@@ -1,5 +1,6 @@
 package com.geowarin
 
+import com.geowarin.mvc.MvcConfig
 import com.geowarin.rest.RestConfig
 import com.geowarin.security.SecurityConfig
 import groovy.transform.CompileStatic
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping
  */
 @EnableAutoConfiguration
 @CompileStatic
-@Import([RestConfig, SecurityConfig])
+@Import([RestConfig, SecurityConfig, MvcConfig])
 @Controller
 class Application {
 
