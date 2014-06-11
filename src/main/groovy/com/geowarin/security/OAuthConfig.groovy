@@ -2,8 +2,8 @@ package com.geowarin.security
 
 import groovy.transform.CompileStatic
 import org.brickred.socialauth.SocialAuthConfig
+import org.brickred.socialauth.SocialAuthManager
 import org.brickred.socialauth.spring.bean.SocialAuthTemplate
-import org.brickred.socialauth.spring.bean.SpringSocialAuthManager
 import org.brickred.socialauth.spring.controller.SocialAuthWebController
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -29,8 +29,8 @@ class OAuthConfig {
 
     @Bean
     @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
-    SpringSocialAuthManager socialAuthManager() {
-        new SpringSocialAuthManager()
+    SocialAuthManager socialAuthManager() {
+        new SocialAuthManager(socialAuthConfig: socialAuthConfig())
     }
 
     @Bean

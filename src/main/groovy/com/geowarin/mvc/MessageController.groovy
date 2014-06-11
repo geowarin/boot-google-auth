@@ -16,4 +16,9 @@ class MessageController {
     String sendMessage(String text) {
         'messages/home'
     }
+
+    @RequestMapping('/')
+    String home() {
+        'messages/home'
+    }
 }

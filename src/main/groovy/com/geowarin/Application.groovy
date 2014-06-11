@@ -18,16 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping
  */
 @EnableAutoConfiguration
 @CompileStatic
-@Import([RestConfig, SecurityConfig, MvcConfig])
-@Controller
+@Import([SecurityConfig, RestConfig, MvcConfig])
 class Application {
 
     static void main(String[] args) {
         SpringApplication.run(Application, args)
-    }
-
-    @RequestMapping('/')
-    String home() {
-        'messages/home'
     }
 }

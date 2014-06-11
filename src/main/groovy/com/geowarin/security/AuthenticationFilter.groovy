@@ -34,7 +34,7 @@ class AuthenticationFilter extends GenericFilterBean {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         try {
             SecurityContext contextBeforeChainExecution = createSecurityContext();
-            SecurityContextHolder.setContext(contextBeforeChainExecution);
+            SecurityContextHolder.context = contextBeforeChainExecution;
             filterChain.doFilter(request, response);
 
         } finally {

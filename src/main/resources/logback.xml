@@ -3,6 +3,6 @@
 
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <logger name="org.brickred.socialauth" level="DEBUG"/>
-    <logger name="org.springframework" level="DEBUG"/>
+    <logger name="org.springframework" level="INFO"/>
 
 </configuration>
