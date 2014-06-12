@@ -5,7 +5,9 @@ import org.brickred.socialauth.SocialAuthConfig
 import org.brickred.socialauth.SocialAuthManager
 import org.brickred.socialauth.spring.bean.SocialAuthTemplate
 import org.brickred.socialauth.spring.controller.SocialAuthWebController
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Scope
 import org.springframework.context.annotation.ScopedProxyMode
@@ -18,13 +20,15 @@ import org.springframework.context.annotation.ScopedProxyMode
  */
 @Configuration
 @CompileStatic
+@ComponentScan
 class OAuthConfig {
+
+    @Autowired
+    SocialAuthConfigFactory configFactory
 
     @Bean
     SocialAuthConfig socialAuthConfig() {
-        def socialAuthConfig = new SocialAuthConfig()
-        socialAuthConfig.load('auth.properties')
-        socialAuthConfig
+        configFactory.createConfig()
     }
 
     @Bean
