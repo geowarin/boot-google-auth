@@ -20,7 +20,7 @@ class DevSocialAuthFactory implements  SocialAuthConfigFactory {
     @Override
     SocialAuthConfig createConfig() {
         def socialAuthConfig = new SocialAuthConfig()
-        socialAuthConfig.load('auth.properties')
+        socialAuthConfig.load('.env')
         socialAuthConfig
     }
 }

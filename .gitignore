@@ -16,4 +16,4 @@
 log/
 target/
 
-src/main/resources/auth.properties
+.env
